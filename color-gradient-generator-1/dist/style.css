@@ -1,0 +1,276 @@
+:root {
+  --d1: 320.54deg;
+  --d2: 58.72deg;
+  --d3: 121.28deg;
+  --d4: 180deg;
+  --d5: 52.23deg;
+  --d6: 121.28deg;
+  --d7: 50% 72.12% at 50% 50%;
+  --d8: 72.37%;
+  --p1: 0%;
+  --p2: 100%;
+  --p3: .5%;
+  --blend-one: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge;
+  --blend-two: screen, color-dodge, color-burn, screen, overlay, difference;
+  --no-blend: inherit;
+  --c1: #AF1015;
+  --c2: #E03CDE;
+  --c3: #8149D3;
+  --c4: #2A257C;
+  --c5: #E7F02D;
+  --c6: #D65462;
+  --c7: #2FF264;
+  --c8: #4E6FB5;
+  --c9: #B8771A;
+  --c10: #F9DD63;
+  --c11: #8294A6;
+  --c12: #DB9175;
+  --c13: #972465;
+  --c14: #E8C7ED;
+  --c15: #5E08A7;
+  --c16: #F35EEE;
+  --c17: #8CB64E;
+  --c18: #2D7D19;
+  --c19: #9BF7FF;
+  --c20: #6637D4;
+}
+
+.theme__dark {
+  --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --accent-1: #111;
+  --accent-2: #222;
+  --accent-3: #333;
+  --accent-4: #444;
+  --black0: #000;
+  --black1: #0e0e0f;
+  --white1: #fff;
+  --white2: #cccbcb;
+}
+
+*,
+*:before,
+*:after {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--primaryFont);
+  background:
+  linear-gradient(var(--d1), var(--c1) var(--p1), var(--c11) var(--d8)),
+    linear-gradient(var(--d2), var(--c2) var(--p1), var(--c12) var(--p2)),
+    linear-gradient(var(--d3), var(--c3) var(--p1), var(--c13) var(--p2)),
+    linear-gradient(var(--d3), var(--c4) var(--p1), var(--c14) var(--p2)),
+    linear-gradient(var(--d4),var(--c5) var(--p1), var(--c15) var(--p3),var(--c17) var(--p2)),
+    linear-gradient(var(--d5), var(--c6) var(--p1), var(--c16) var(--p2)),
+    linear-gradient(var(--d6), var(--c7) var(--p1), var(--c10) var(--p2)),
+    radial-gradient(var(--d7), var(--c8) var(--p1), var(--c9) var(--p2));
+  height: 100vh;
+  width: 100%;
+  color: var(--white1);
+  text-rendering: optimizeSpeed;
+  font-size: 1rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
+  position: relative;
+  overflow: hidden;
+  background-blend-mode: var(--blend-one);
+  backdrop-filter: none;
+}
+
+.hide-container {
+  display: none;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 6rem .5rem 0 .5rem;
+  background: rgba(23, 23, 23, 0.8);
+  width: 100%;
+  height: 100vh;
+  word-wrap: break-word;
+  overflow: hidden;
+  z-index: 100;
+}
+
+pre {
+  height: 100%;
+  overflow-y: scroll;
+  width: 100%;
+  font-size: .875rem;
+}
+
+.btns {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  margin: auto;
+  width: 100%;
+  height: 4rem;
+  padding: .5rem;
+}
+
+.col-1,
+.col-2 {
+  display: flex;
+  width: 100%;
+}
+
+.col-1 {
+  justify-content: flex-start;
+}
+
+.col-2 {
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.btns button {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  filter: brightness(.9) contrast(1.2);
+  background: linear-gradient(to right bottom, var(--accent-3), var(--accent-1));
+  color: var(--white1);
+  border: 1px solid var(--accent-4);
+  font-size: .875rem;
+  height: 2.25rem;
+  padding: 0 0.875rem;
+  text-align: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-right: .5rem;
+}
+
+.btns .generate {
+  background: var(--c3);
+}
+
+.btns button:not(.generate):hover {
+  background: linear-gradient(to right bottom, rgba(50, 145, 255, .25), var(--accent-1));
+}
+
+.btns button:not(.generate):active {
+  background: #222;
+}
+
+.btns .generate:hover {
+  filter: brightness(1.2) contrast(1.2);
+}
+
+.btns .generate:active {
+  filter: brightness(1.3) contrast(1.3);
+}
+
+.checkbox-container,
+.blend-mode {
+  filter: brightness(.9) contrast(1.2);
+  color: var(--white1);
+  font-size: .875rem;
+  display: flex;
+  background: var(--black0);
+  border: 1px solid var(--accent-4);
+  align-items: center;
+  padding: 0 0.875rem 0 .5rem;
+  justify-content: space-between;
+  height: 2.25rem;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.blend-mode {
+  margin-top: .5rem;
+}
+
+.checkbox-container:hover {
+  background: linear-gradient(to right bottom, var(--accent-3), var(--accent-1));
+}
+
+.checkbox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.checkmark {
+  border: 1px solid var(--white2);
+  background: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: .75rem;
+}
+
+.checkmark svg {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.checkbox:checked ~ .checkmark svg {
+  display: block;
+  color: var(--black0);
+}
+
+.checkbox:checked ~ .checkmark {
+  background: var(--white2);
+}
+
+@media screen and (max-width: 1080px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 12px;
+  }
+}
